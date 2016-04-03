@@ -19,9 +19,11 @@
   <div class="col-md-3">
     <div id="map-canvas" style="width: 100%; height:230px"></div>
     <h3><%= @place.name %></h3>
+    <div class="average"></div>
     <p>
       <strong>Address</strong>
-      <%= @place.name %>
+      <%= @place.address %> <br>
+      <%= @place.city %>, <%= @place.state %> <%= @place.zip %>
     </p>
     <p>
       <strong>Phone</strong>
@@ -56,4 +58,11 @@
     readOnly: true
   });
 <% end %>
+
+$(".average ").raty({
+    starOn: "<%= image_path('star-on.png') %>",
+    starOff: "<%= image_path('star-off.png') %>",
+    score: '<%= @place.total_average %>',
+    readOnly: true
+  });
 </script>
