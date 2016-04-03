@@ -1,3 +1,4 @@
+
 class ReviewsController <ApplicationController
 	before_action :authenticate_user!
 	before_action :set_review, only: [:edit, :update, :destroy]
@@ -41,6 +42,6 @@ class ReviewsController <ApplicationController
   end
 
   def review_params
-  	params.require(:review).permit(:content, :place_id)
+  	params.require(:review).permit(:content, :place_id, :score)
   end
 end
