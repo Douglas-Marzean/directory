@@ -16,4 +16,6 @@ class Place < ActiveRecord::Base
   def full_address
     [address, city, state, zip].join(',')
   end
+
+  has_many :reviews, dependent: :destroy
 end
