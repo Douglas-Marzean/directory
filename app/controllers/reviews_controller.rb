@@ -12,7 +12,7 @@ class ReviewsController <ApplicationController
       if @review.save
         format.html { redirect_to place_path(@review.place) , notice: 'Review was successfully created.' }
       else
-        format.html { render :new }
+        format.html { redirect_to place_path(@review.place), alert: 'Please complete all fields.' }
       end
     end
   end

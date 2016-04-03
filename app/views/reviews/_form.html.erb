@@ -2,10 +2,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :content, required: true %>
+    <%= f.input :content, required: true, label: false, :placeholder => "* Please leave a detailed review. Help others make a great decision!" %>
     <%= f.hidden_field :place_id, required: true, value: @place.id %>
     <%= f.hidden_field :score, required: true %>
-    <div class="score"></div>
+    <strong><abbr title="required">*</abbr> Rating</strong>
+    <div class="score"></div> <br>
   </div>
 
   <div class="form-actions">
@@ -19,6 +20,7 @@
     starOff: "<%= image_path('star-off.png') %>",
     target: "#review_score",
     targetKeep: true,
-    targetType: "number"
+    targetType: "number",
+    disable_after_rate: true
   });
 </script>
