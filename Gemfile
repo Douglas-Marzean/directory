@@ -12,6 +12,7 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'gravatarify'
+gem 'geocoder'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

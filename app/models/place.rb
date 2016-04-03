@@ -9,4 +9,11 @@ class Place < ActiveRecord::Base
   validates_presence_of :user_id
 
   belongs_to :user
+
+  geocoded_by :full_address
+  after_validation :geocode
+
+  def full_address
+    [address, city, state, zip].join(',')
+  end
 end
