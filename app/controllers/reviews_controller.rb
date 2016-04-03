@@ -4,6 +4,7 @@ class ReviewsController <ApplicationController
 	before_action :set_review, only: [:edit, :update, :destroy]
 
   def edit
+		@place = @review.place
   end
 
   def create

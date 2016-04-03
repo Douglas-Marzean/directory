@@ -8,17 +8,19 @@
       <th>State</th>
       <th>Zip</th>
       <th>Phone</th>
+      <th>Rating</th>
       </tr>
   </thead>
 
   <tbody>
     <% @places.each do |place| %>
       <tr>
-        <td><%= place.name %></td>
+        <td><%= link_to place.name, place_path(place) %></td>
         <td><%= place.city %></td>
         <td><%= place.state %></td>
         <td><%= place.zip %></td>
         <td><%= place.phone %></td>
+        <td><siv class='average_<%= place.id %>'></td>
         </tr>
     <% end %>
   </tbody>
@@ -27,3 +29,14 @@
 <% if current_user %>
   <%= link_to 'New Place', new_place_path, class: 'btn btn-primary' %>
 <% end %>
+
+<script>
+    <% @places.each do |place| %>
+      $(".average_<%= place.id %> ").raty({
+      starOn: "<%= image_path('star-on.png') %>",
+      starOff: "<%= image_path('star-off.png') %>",
+      score: '<%= place.total_average %>',
+      readOnly: true
+    });
+  <% end %>
+</script>
