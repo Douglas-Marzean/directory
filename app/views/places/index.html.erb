@@ -1,0 +1,29 @@
+<h1>Listing Places</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Phone</th>
+      </tr>
+  </thead>
+
+  <tbody>
+    <% @places.each do |place| %>
+      <tr>
+        <td><%= place.name %></td>
+        <td><%= place.city %></td>
+        <td><%= place.state %></td>
+        <td><%= place.zip %></td>
+        <td><%= place.phone %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% if current_user %>
+  <%= link_to 'New Place', new_place_path, class: 'btn btn-primary' %>
+<% end %>
