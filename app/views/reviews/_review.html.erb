@@ -1,5 +1,5 @@
 <p>
-  <%= gravatar_tag review.user.email, size: 20 %>
+  <%= gravatar_tag review.user.email, size: 20, :html => { :class => "img-circle" } %>
   <%= review.content %>
   by <%= review.user.name %>
   <div class="score_<%= review.id %>"></div>

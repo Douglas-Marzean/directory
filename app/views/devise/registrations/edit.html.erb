@@ -21,7 +21,7 @@
 <% end %>
 
 <hr>
-<%= gravatar_tag current_user.email, size: 100 %>
+<%= gravatar_tag current_user.email, size: 100, :html => { :class => "img-circle" } %>
 <%= link_to 'change avatar', 'http://en.gravatar.com' %>
 
 <h3>Cancel my account</h3>
